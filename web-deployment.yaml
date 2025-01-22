@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: synergychat-web
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: synergychat-web
@@ -15,9 +15,5 @@ spec:
       containers:
       - name: synergychat-web
         image: docker.io/bootdotdev/synergychat-web:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
