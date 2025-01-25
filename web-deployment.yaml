@@ -19,3 +19,6 @@ spec:
         image: docker.io/bootdotdev/synergychat-web:latest
         ports:
         - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: synergychat-web-configmap
