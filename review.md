@@ -18,7 +18,7 @@
 
 ## Ecosystem:
 1. Use Kubernetes Dashboard, Octant, Lens, or K9s to monitor the cluster.
-2. Use KubeView to visualize it.
+2. Use KubeView to visualize it. Here are the [installation steps](kubeview-installation-steps.md).
 
 ## Deep Dive
 1. **Packaging:** You package your application in an container image and push it to a container registry.
