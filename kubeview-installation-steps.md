@@ -23,9 +23,9 @@ loadBalancer:
 ```
  6. Expose the service using port forwarding:
 ```
-> kubectl port-forward service/kubeview 8000:80
+> kubectl port-forward service/kubeview 7000:80
 ```
- 7. In your browser, navigate to `localhost:8000`:
+ 7. In your browser, navigate to `localhost:7000`:
  
 
 [![kubernetes cluster visualized in KubeView][1]][1]

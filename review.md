@@ -40,11 +40,13 @@
 
 ## Commands and Code
 
-### Start the cluster and see it in the Kubernetes Dashboard:
+### Start the cluster and see it in the Kubernetes Dashboard on http://localhost:63840 and  KubeView on http://localhost:7000:
 ```
 > minikube start
 
 > minikube dashboard --port=63840
+
+> kubectl port-forward service/kubeview 7000:80
 ```
 
 ### web-deployment.yaml
@@ -333,4 +335,3 @@ resources:
 
 > minikube delete
 ```
-
