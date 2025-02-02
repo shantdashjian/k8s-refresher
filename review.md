@@ -46,6 +46,8 @@
 
 > minikube dashboard --port=63840
 
+> helm install kubeview ./kubeview -f myvalues.yaml
+
 > kubectl port-forward service/kubeview 7000:80
 ```
 
