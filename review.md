@@ -4,7 +4,7 @@
 - Kubernetes, or K8s for short, is a container orchestration tool. 
 - A higher level definition of it is that it's a cloud native deployment and runtime environment. 
 - Your application needs resources (CPU, memory, networking, etc.) to run and K8s abstract away all of that and takes care of scheduling those for you.
-- K8s is a distributes system/cluster of servers/nodes that hosts applications.
+- K8s is a distributed system/cluster of servers/nodes that hosts applications.
 
 ## K8s is the Cloud Native Way
 - K8s is the place where you deploy your application to run in the cloud in the **cloud native way**. It's the **cloud native way** because it provides **scaling** and **resilience** for your application in production in a **cost-effective** way and the deployment is **fast**. 
@@ -23,14 +23,15 @@
 ## Deep Dive
 1. **Packaging:** You package your application in an container image and push it to a container registry.
 2. **Deployment:** To deploy it on K8s, you declare in a manifest which image you want. K8s will pull the image, run it as a container inside a pod. You tell it how many replicas you want. It will maintain that number of pods/replicas, a.k.a ReplicaSet, distributed over how many servers/nodes are available in the cluster. 
-3. **Exposure:** To expose your app intenrally (or to the outside world), which is inside a container inside a pod inside a node:
+3. **Exposure:** To expose your app internally (or to the outside world), which is inside a container inside a pod inside a node:
     - You can expose a single pod using port forwarding. 
     - Better is to add a Service that will load balance the requests to all your pods in a deployment. Port forward to the service.  
     - Best is to add an Ingress, which will expose any or all your of services to the outside world, acting as an edge service/API gateway, taking care of security, load balancing, and other cross-cutting concerns. 
     - Locally, you open up a tunnel to your cluster to get the requests to the Ingress. 
-    - In prod, it will be managed by the cloud service via an external cloud-service provided load balancer that will route the requests to your cluster and Ingress.
+    - In prod, it will be managed by the cloud service via an external cloud service provided load balancer that will route the requests to your cluster and Ingress.
 4. **Environment Variables:** Use ConfigMap for non-sensitive env vars, and Secrets for sensitive ones.
 5. **Storage:** K8s enables you to store data in the file system of the container, in a temporary volume inside the pod, or in a persistant volume in the cluster. Best is to use the cloud provider service for persistence.
+6. **Security:** Use Namespaces to isolate kubernetes objects into groups. Use Secrets to store sensitive information.
 6. **Guidelines for resource requests and limits:**
     1. Set memory requests ~10% higher than the average memory usage of your pods
     2. Set CPU requests to 50% of the average CPU usage of your pods
