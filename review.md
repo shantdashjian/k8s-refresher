@@ -21,7 +21,7 @@
 2. Use KubeView to visualize it. Here are the [installation steps](kubeview-installation-steps.md).
 
 ## Deep Dive
-1. **Packaging:** You package your application in an container image and push it to a container registry.
+1. **Packaging:** You package your application in a container image and push it to a container registry.
 2. **Deployment:** To deploy it on K8s, you declare in a manifest which image you want. K8s will pull the image, run it as a container inside a pod. You tell it how many replicas you want. It will maintain that number of pods/replicas, a.k.a ReplicaSet, distributed over how many servers/nodes are available in the cluster. 
 3. **Exposure:** To expose your app internally (or to the outside world), which is inside a container inside a pod inside a node:
     - You can expose a single pod using port forwarding. 
